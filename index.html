@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuphead 3D</title>
+    <script src="/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        
+        <a-assets>
+            <a-asset-item
+                id="isla"
+                src="./assets/inkwell-isle-one-part1-cuphead.glb"
+            ></a-asset-item>
+            <a-asset-item
+                id="cuphead"
+                src="./assets/cuphead_with_animation_gun.glb"
+            ></a-asset-item>
+            <a-asset-item
+                id="coin" 
+                src="./assets/lowpoly_gold_coin.glb" 
+            ></a-asset-item>
+        </a-assets>
+
+        <a-plane 
+            color="#6699ff" 
+            rotation="-90 0 0" 
+            position="0 -3 0" 
+            scale="200 200 200"
+        ></a-plane>
+
+        <a-gltf-model 
+            src="#isla" 
+            rotation="0 0 0" 
+            position="0 -6 0" 
+            scale=".1 .1 .1"
+        ></a-gltf-model>
+
+        <a-gltf-model 
+            src="#cuphead" 
+            position="0 0 0" 
+            scale=".6 .6 .6"
+            animation-mixer="linear" 
+        ></a-gltf-model>
+
+        <a-gltf-model
+            src="#coin"
+            position="0 10 0" 
+            scale="2 2 2"
+            rotation="90 0 0" 
+            animation="
+                property: rotation; 
+                from: 90 0 0; 
+                to: 90 360 0; 
+                loop: true; 
+                dir: normal;  
+                dur: 5000;"
+        ></a-gltf-model>
+        <a-camera position="-8 12 30"></a-camera>
+        <a-sky color="#99ccff"></a-sky>
+    </a-scene>
+</body>
+</html>
